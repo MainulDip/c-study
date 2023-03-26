@@ -30,7 +30,7 @@ int age = 77;
 double cost = 77.00;
 float pi = 3.1416;
 
-// double vs float
+// double vs float : float can hold up to 7 decimal digits accurately while double can hold up to 15
 
 // char for single character, also with single quote
 char letter = 'G';
