@@ -43,7 +43,17 @@ char string[] = "String Uses double quote and is immutable";
 ### Printf :
 ```c
 // %f for float placeholder
-printf("String by %s, Digit by %d and float by %f", "SomeString", 1234, 77.77);
+printf("String by %s, Digit by %d and float by %.2f", "SomeString", 1234, 77.77);
+// %c for single character, %s (string), %d (int), %f and %lf (float/double)
+
+double cost = 77.77;
+printf("\nPrinting double by %%f as cost = %f", cost); // 77.770000
+printf("\nPrinting double by %%.2f as cost = %.2f", cost); // 77.77
+printf("\nPrinting double by %%.6g as cost = %.6g", cost); // 77.77
+
+// %g will take a number that could be represented as %f (a simple float or double) or %e (scientific notation) and return it as the shorter of the two.
+
+// for float, we need to specify how many decimal digit we want by %.2f (%.nf), otherwise it will print 7 decimal point
 ```
 
 
