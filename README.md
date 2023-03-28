@@ -70,7 +70,16 @@ printf("\nPrinting double by %%.6g as cost = %.6g", cost); // 77.77
 
 ### Working With Numbers :
 ```c
+// if neither of the number involved in division, it will return integer with double conversion. 
+double someAverage = 7 / 6;
+printf("Printing division %f\n", someAverage); // 1.000000
+
+// to get real double, at least one of the number needs to be double or float or both. Mismatch will also do
+someAverage = (double) 7 / (float) 6;
+printf("Printing division %f\n", someAverage); // 1.166667
+
 long double piValue = 22.00 / 7.00;
+// MinGW uses the Microsoft runtime, and there is said to be some problem, it doesn't support long double but implements it as double, hence using __mingw_printf.
 __mingw_printf("M_PI = %.47Lf \n", piValue);
 ```
 
