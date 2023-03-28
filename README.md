@@ -1,5 +1,16 @@
 ### Overview:
-It's a personalized repo for the C programming language, which will act like mini guide to jump start and personal references/notes
+It's a personalized repo for the C programming language, which will act like mini guide to jump start and personal references/notes.
+### Get Compiler Version:
+```c
+#ifdef __clang_major__
+    printf ("clang detected version %d.%d\n", __clang_major__, __clang_minor__);
+#endif
+
+#ifdef __GNUC__
+    // note that clang 3.7 declares itself as a gcc 4.2"
+    printf ("gcc detected version %d.%d\n", __GNUC__, __GNUC_MINOR__);
+#endif
+``
 
 ### Variables :
 ```c
@@ -58,6 +69,10 @@ printf("\nPrinting double by %%.6g as cost = %.6g", cost); // 77.77
 
 
 ### Working With Numbers :
+```c
+long double piValue = 22.00 / 7.00;
+__mingw_printf("M_PI = %.47Lf \n", piValue);
+```
 
 
 ### Comments :

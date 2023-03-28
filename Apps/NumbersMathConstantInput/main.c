@@ -17,16 +17,10 @@ int main()
     printf("pow(3,2) = %f \n", numPow);
     printf("sqrt(47) = %f \n", numSqrt);
     printf("sqrt(47) = %.20f \n", numSqrt);
-    // printf("M_PI = %Lf \n", piValue);
+    __mingw_printf("M_PI = %.47Lf \n", piValue);
 
     double a = M_PI;
-    printf("%.20Lf\n", a);
-
-    long long int x=25,y=40000;       //int was overflowing and causing you error
-   long double dist;
-   dist=sqrt((47-x)*(47-x)+(132000-y)*(132000-y));   //this will safely compute within range and return the desired result
-   printf("After distance\n");
-   printf(" x= %lld y=%lld dist=%Lf\n",x,y,dist);
+    printf("%.7Lf\n", a);
 
     return 0;
 }
