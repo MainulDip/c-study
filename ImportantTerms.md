@@ -13,7 +13,7 @@ It is a tool chain, consist of GCC, linker, objects + header + library, and debu
 It adds to windows a library (code and headers) that add the POSIX interface to windows (translating the POSIX calls into Windows calls) and port all the GNU programs (Linux based) by compiling them to use that library.
 
 ### MSYS (M-Sys or Minimal System):
-It's a a component of MinGW. MSYS is an application that gives the user a command shell based on POSIX Command Shell. It allows programmers to run shell scripts that will then run the MinGW gcc compiler and other tools to build applications.
+It's a a component of MinGW. MSYS is an application that gives the user a command shell based on POSIX Command Shell. It allows programmers to run shell scripts that will then run the MinGW gcc compiler and other tools to build applications
 
 
 ### GCC & MSVC:

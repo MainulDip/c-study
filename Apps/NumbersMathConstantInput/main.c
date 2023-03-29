@@ -30,5 +30,10 @@ int main()
     double a = M_PI;
     printf("Printing pi Value by M_PI = %.7Lf\n", a);
 
+    // ceil() function rounds a number upwards to its nearest integer
+    printf("ceil %f\n", ceil(1.4)); // 2.000000
+    // floor() method rounds a number downwards to its nearest integer
+    printf("floor %f", floor(1.4)); // 1.000000
+
     return 0;
 }

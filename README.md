@@ -81,14 +81,27 @@ printf("Printing division %f\n", someAverage); // 1.166667
 long double piValue = 22.00 / 7.00;
 // MinGW uses the Microsoft runtime, and there is said to be some problem, it doesn't support long double but implements it as double, hence using __mingw_printf.
 __mingw_printf("M_PI = %.47Lf \n", piValue);
+
+
+// ceil() function rounds a number upwards to its nearest integer
+printf("ceil %f\n", ceil(1.4)); // 2.000000
+// floor() method rounds a number downwards to its nearest integer
+printf("floor %f", floor(1.4)); // 1.000000
 ```
 
 
 ### Comments :
-
+// and /* */
 
 ### Constants :
+```c
+// constants are immutable (variables are mutable)
+const int SOME_NUM = 7;
 
+// also there are some constant on the fly
+// here the text "hello" and the placeholder value "123" are constant
+printf("hello %f", 1234);
+```
 
 ### Getting User Input :
 
