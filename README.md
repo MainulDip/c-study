@@ -103,7 +103,7 @@ const int SOME_NUM = 7;
 printf("hello %f", 1234);
 ```
 
-### Getting User Input :
+### Getting User Input:
 
 
 ### Building a Basic Calculator :
