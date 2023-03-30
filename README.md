@@ -93,7 +93,7 @@ printf("floor %f", floor(1.4)); // 1.000000
 ### Comments :
 // and /* */
 
-### Constants :
+### Constants:
 ```c
 // constants are immutable (variables are mutable)
 const int SOME_NUM = 7;
