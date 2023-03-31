@@ -21,4 +21,4 @@ It's a a component of MinGW. MSYS is an application that gives the user a comman
 * MSVC: Microsoft Visual C++ is a compiler for the C, C++ and C++/CX programming languages by Microsoft. MSVC is proprietary software; it was originally a standalone product but later became a part of Visual Studio and made available in both trial-ware and freeware forms.
 
 ### Unix vs Linux (Unix like):
-Unix is closed source (made by AT&T, came before Linux), where Linux is open source.
+Unix is closed source (proprietary, made by AT&T, came before Linux), where Linux is open source.
