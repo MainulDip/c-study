@@ -1,6 +1,6 @@
 ### Overview:
 It's a personalized repo for the C programming language, which will act like mini guide to jump start and personal references/notes.
-### Get Compiler Version:
+### Get Compiler Version :
 ```c
 #ifdef __clang_major__
     printf ("clang detected version %d.%d\n", __clang_major__, __clang_minor__);
