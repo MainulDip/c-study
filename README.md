@@ -133,15 +133,22 @@ fgets(firstNameMult, 29, stdin);
 printf("\nDouble word FirstName: %s", firstNameMult);
 ```
 
-
-### Building a Basic Calculator :
-
-
-### Building a Mad Libs Game :
-
-
 ### Arrays :
+```c
+int someNumbers[] = {1, 2, 3, 4};
+printf("First Number is %d\n", someNumbers[0]);
 
+int sN[20];
+sn[0] = 12;
+printf("First Element is %d\n", sn[0]);
+sn[19] = 34;
+printf("Last Element is %d\n", sn[19]); // 34
+
+printf("Non Existence Element is %d\n", sn[20]); // -2
+
+sn[21] = 1234;
+printf("Non Existence Element is %d\n", sn[21]); // -2
+```
 
 ### Functions :
 
