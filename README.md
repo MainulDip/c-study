@@ -151,6 +151,35 @@ printf("Non Existence Element is %d\n", sn[21]); // -2
 ```
 
 ### Functions :
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+void printSizeOf(int intArray[]);
+void printLength(int intArray[]);
+
+int main(int argc, char* argv[])
+{
+    int array[] = { 0, 1, 2, 3, 4, 5, 6 };
+
+    printf("sizeof of array: %d\n", (int) sizeof(array));
+    printSizeOf(array);
+    // An array sent as a parameter to a function is treated as a pointer, so sizeof will return the pointer's size, instead of the array's.
+
+    printf("Length of array: %d\n", (int)( sizeof(array) / sizeof(array[0]) ));
+    printLength(array);
+}
+
+void printSizeOf(int intArray[])
+{
+    printf("sizeof of parameter: %d\n", (int) sizeof(intArray));
+}
+
+void printLength(int intArray[])
+{
+    printf("Length of parameter: %d\n", (int)( sizeof(intArray) / sizeof(intArray[0]) ));
+}
+```
 
 
 ### Return Statement :
@@ -193,3 +222,14 @@ printf("Non Existence Element is %d\n", sn[21]); // -2
 
 
 ### Reading Files :
+
+### Macros:
+```c
+#define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))
+
+int main() {
+    int a[17];
+    size_t n = NELEMS(a);
+    return 0;
+}
+```
