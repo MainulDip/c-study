@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     // An array sent as a parameter to a function is treated as a pointer address, so sizeof will return the pointer's address size, instead of the array's.
 
     printf("Length of array: %d\n", (int)( sizeof(array) / sizeof(array[0]) )); // 7
-    printLength(array); // 2
+    printLength({ 0, 1, 2, 3, 4, 5, 6 }); // 2
 }
 
 void printSizeOf(int intArray[])

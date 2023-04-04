@@ -180,6 +180,11 @@ void printLength(int intArray[])
     printf("Length of parameter: %d\n", (int)( sizeof(intArray) / sizeof(intArray[0]) ));
 }
 ```
+
+### Array as Function Parameter:
+Passing arrays in C is the same as passing by pointer/address. Where the function gets the first element's address of the array, no other information like array length is supplied.
+
+So we have to either pass the length on the array as in another parameter, or wrap it in a struct and pass the struct as parameter.
 ### Function Parameter as Pointer and Address:
 * Passing Address
 ```c
@@ -266,6 +271,29 @@ int main()
 
 
 ### Reading Files :
+
+
+### Recursion: 
+Recursion is the technique of making a function call itself.
+```c
+#include <stdio.h>
+
+int sum(int k);
+
+int main() {
+  int result = sum(10);
+  printf("%d", result); // result, 55
+  return 0;
+}
+
+int sum(int k) {
+  if (k > 0) {
+    return k + sum(k - 1);
+  } else {
+    return 0;
+  }
+}
+```
 
 ### Macros:
 ```c
