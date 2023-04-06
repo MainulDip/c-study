@@ -9,7 +9,7 @@ There are 2 types of header
  - custom/user defined header: #include "customheader.h"
 
  ### Once-Only Headers:
- If a header file include twice, compiler will throw error. to avoid  wrapper #ifndef can be used.
+ If a header file include twice, compiler will throw error. to avoid  wrapper #ifndef can be used
  ```c
 #ifndef HEADER_FILE
 #define HEADER_FILE

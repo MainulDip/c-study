@@ -33,6 +33,6 @@ void printLength(int intArray[], int length)
 {
     // here intArray is a address, so
     printf("Length of parameter's address: %d\n", (int)( sizeof(intArray) / sizeof(intArray[0]) ));
-    printf("Length of array parameter: %d\n", (int) length);
+    printf("Length of array parameter: %d", (int) length);
     printf("%d", (int) sizeof(intArray));
 }

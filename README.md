@@ -211,6 +211,8 @@ float calculateSum(float num[], int length) {
 }
 ```
 
+### Multidimensional array and pointer:
+
 ### Multidimensional array as function parameter:
 ```c
 #include <stdio.h>
