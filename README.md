@@ -185,6 +185,61 @@ void printLength(int intArray[])
 Passing arrays in C is the same as passing by pointer/address. Where the function gets the first element's address of the array, no other information like array length is supplied.
 
 So we have to either pass the length on the array as in another parameter, or wrap it in a struct and pass the struct as parameter.
+
+```c
+#include <stdio.h>
+float calculateSum(float num[], int length);
+
+int main() {
+  float result, num[] = {23.4, 55, 22.6, 3, 40.5, 18};
+  int numLength = sizeof(num) / sizeof(*num) // or sizeof(num[0])
+
+  // num array is passed to calculateSum()
+  result = calculateSum(num, numLength); 
+  printf("Result = %.2f", result);
+  return 0;
+}
+
+float calculateSum(float num[], int length) {
+  float sum = 0.0;
+
+  for (int i = 0; i < length; ++i) {
+    sum += num[i];
+  }
+
+  return sum;
+}
+```
+
+### Multidimensional array as function parameter:
+```c
+#include <stdio.h>
+void displayNumbers(int num[2][2]);
+
+int main() {
+  int num[2][2];
+  printf("Enter 4 numbers:\n");
+  for (int i = 0; i < 2; ++i) {
+    for (int j = 0; j < 2; ++j) {
+      scanf("%d", &num[i][j]);
+    }
+  }
+
+  // pass multi-dimensional array to a function
+  displayNumbers(num);
+
+  return 0;
+}
+
+void displayNumbers(int num[2][2]) {
+  printf("Displaying:\n");
+  for (int i = 0; i < 2; ++i) {
+    for (int j = 0; j < 2; ++j) {
+      printf("%d\n", num[i][j]);
+    }
+  }
+}
+```
 ### Function Parameter as Pointer and Address:
 * Passing Address
 ```c
