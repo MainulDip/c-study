@@ -29,4 +29,4 @@ Unix is closed source (proprietary, made by AT&T, came before Linux), where Linu
 
 ### Template and template parameter:
 
-### typedef :
+### typedef:

@@ -8,7 +8,7 @@ There are 2 types of header
  - compiler/library header : #include <package.h>
  - custom/user defined header: #include "customheader.h"
 
- ### Once-Only Headers:
+ ### Once-Only Headers :
  If a header file include twice, compiler will throw error. to avoid  wrapper #ifndef can be used
  ```c
 #ifndef HEADER_FILE
