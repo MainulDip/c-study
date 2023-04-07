@@ -301,6 +301,9 @@ int main()
   return 0;
 }
 ```
+### Multidimensional array as function parameter:
+
+https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array-to-a-function-in-c-and-c
 
 ### Return Statement :
 
@@ -333,6 +336,20 @@ int main()
 
 
 ### Pointers :
+
+### Pointer Arithmetic:
+
+https://www.geeksforgeeks.org/multidimensional-pointer-arithmetic-in-cc/
+
+### Pointers with array:
+https://www.geeksforgeeks.org/pointer-array-array-pointer/?ref=rp
+
+### double pointers:
+https://www.geeksforgeeks.org/c-pointer-to-pointer-double-pointer/?ref=rp
+
+### Multidimensional array to pointer:
+
+https://stackoverflow.com/questions/1584100/converting-multidimensional-arrays-to-pointers-in-c
 
 
 ### Dereferencing Pointers :

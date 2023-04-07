@@ -18,7 +18,7 @@ the entire header file file
 
 #endif
  ```
- ### Computed Includes :
+ ### Computed Includes:
  To include header based on os, this can be used.
  ```c
  // header file
