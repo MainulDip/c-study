@@ -116,10 +116,10 @@ printf("Enter your cgpa: ");
 scanf("%lf", &cgpa); // %lf for double
 printf("\nYour cgpa is %lf\n", cgpa); // %f will also work
 
-// for this, prompt can be skipped, as enter/return keyboard input behaves like another char
+// while scanning character, space before the %c is important
 char grade;
 printf("\nand what's the grade : ");
-scanf("%c", &grade);
+scanf(" %c", &grade);
 printf("So, your grade is : %c\n", grade);
 
 char firstName[10];
@@ -306,6 +306,7 @@ https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array
 ### If Statements :
 ```c
 int x;
+printf("Enter a number : ");
 scanf("%d", &x);
 
 // if, else if, else
@@ -316,16 +317,33 @@ if(x > 7){
 } else {
     printf("if nither, x is equal to 7");
 }
+printf("\n\n");
+```
+### Switch Statements :
+```c
+char grade;
+printf("Enter your grade : ");
+scanf(" %c", &grade); // space before the %c is important for scanning
+
+switch(grade) {
+case 'A':
+    printf("A Grade");
+    break;
+case 'B':
+    printf("B Grade");
+    break;
+default :
+    printf("Something Else Grade");
+    break;
+}
+printf("\n\n");
 ```
 
 
-### Building a Better Calculator :
-
-
-### Switch Statements :
-
-
 ### Structs :
+
+
+### Template:
 
 
 ### While Loops :

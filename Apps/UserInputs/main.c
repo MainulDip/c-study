@@ -13,7 +13,7 @@ int main()
     scanf("%lf", &cgpa); // %lf for double
     printf("\nYour cgpa is %lf\n", cgpa); // %f will also work
 
-    // for this, prompt can be skipped, as enter/return keyboard input behaves like another char
+    // while scanning character, space before the %c is important
     char grade;
     printf("\nand what's the grade : ");
     scanf("%c", &grade);
