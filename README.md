@@ -152,32 +152,25 @@ printf("Non Existence Element is %d\n", sn[21]); // -2
 
 ### Functions :
 ```c
-#include <stdio.h>
-#include <stdlib.h>
+// if the function's return type is anything other than void, put signature (prototyping) before the main function
+double cube(double num);
 
-void printSizeOf(int intArray[]);
-void printLength(int intArray[]);
-
-int main(int argc, char* argv[])
+int main()
 {
-    int array[] = { 0, 1, 2, 3, 4, 5, 6 };
+    sayHi("World");
 
-    printf("sizeof of array: %d\n", (int) sizeof(array));
-    printSizeOf(array);
-    // An array sent as a parameter to a function is treated as a pointer, so sizeof will return the pointer's size, instead of the array's.
-
-    printf("Length of array: %d\n", (int)( sizeof(array) / sizeof(array[0]) ));
-    printLength(array);
+    printf("cube(7) = %f\n", cube(7.0));
+    return 0;
 }
 
-void printSizeOf(int intArray[])
-{
-    printf("sizeof of parameter: %d\n", (int) sizeof(intArray));
+// for void return type, header is not required
+void sayHi (char name[]) {
+    printf("Hello %s!\n", name);
 }
 
-void printLength(int intArray[])
-{
-    printf("Length of parameter: %d\n", (int)( sizeof(intArray) / sizeof(intArray[0]) ));
+double cube(double num) {
+    double result = num * num * num;
+    return result;
 }
 ```
 
@@ -304,6 +297,8 @@ int main()
 ### Multidimensional array as function parameter:
 
 https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array-to-a-function-in-c-and-c
+
+### Function's varag arguments and default parameter's values:
 
 ### Return Statement :
 
