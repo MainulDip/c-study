@@ -304,6 +304,19 @@ https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array
 
 
 ### If Statements :
+```c
+int x;
+scanf("%d", &x);
+
+// if, else if, else
+if(x > 7){
+    printf("It's gretter than 7");
+} else if (x < 7) {
+    printf("x is smaller than 7");
+} else {
+    printf("if nither, x is equal to 7");
+}
+```
 
 
 ### Building a Better Calculator :
