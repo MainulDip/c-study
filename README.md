@@ -340,7 +340,8 @@ printf("\n\n");
 ```
 
 
-### Structs :
+### Structs | Structures :
+Structures/Structs are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure. A structure can contain many different data types (int, float, char, etc.) in one place.
 
 
 ### Template:
