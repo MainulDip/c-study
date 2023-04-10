@@ -343,6 +343,64 @@ printf("\n\n");
 ### Structs | Structures :
 Structures/Structs are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure. A structure can contain many different data types (int, float, char, etc.) in one place.
 
+```c
+// define the structure
+struct Car {
+    int id;
+    char category;
+    char brand[50];
+};
+
+int main() {
+    // initialize structure and assign values one by one.
+    struct Car car1;
+    car1.id = 1;
+    car1.category = 'A';
+    strcpy(car1.brand, "BMW"); // use strcpy to assign string
+
+    // copy another structure and change values
+    struct Car car2 = car1;
+    car2.id = 2;
+    strcpy(car2.brand, "TESLA");
+
+    // initialize structure all at once
+    struct Car car3 = {3, 'B', "FORD"};
+
+    printf("id = %d, category = %c and brand = %s\n", car1.id, car1.category, car1.brand);
+    printf("id = %d, category = %c and brand = %s\n", car2.id, car2.category, car2.brand);
+    printf("id = %d, category = %c and brand = %s\n", car3.id, car3.category, car3.brand);
+    return 0;
+}
+```
+
+### Structure Inheritance Hack || Structure/s in Structure:
+```c
+    typedef struct 
+    {
+        int id;
+        char brand[30];
+        char engineType[30];
+    } Car;
+
+    typedef struct 
+    {
+        Car car;
+        int engineWattage;
+    } ElectricCar;
+
+    typedef struct 
+    {
+        Car car;
+        int engineCC;
+    } GasolineCar;
+
+    ElectricCar electricCar  = { 1, "TESLA", "Electric", 7000};
+    GasolineCar gasCar = {2, "BMW", "Gas", 2000};
+
+    printf("id = %d\n", electricCar.car.id);
+    printf("id = %d, brand = %s, Engine Type = %s, EngineCC = %d\n", gasCar.car.id, gasCar.car.brand, gasCar.car.engineType, gasCar.engineCC);
+```
+
 
 ### Template:
 
