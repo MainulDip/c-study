@@ -8,22 +8,33 @@ struct Student {
     int batch;
 };
  
+// variable of structure with pointer defined
+struct Student s, *ptr;
+ 
 int main()
 {
+    // pointing to the address by the pointer.
+    ptr = &s;
+    // Taking inputs and assign using arrow
+    printf("Enter the Roll Number of Student\n");
+    scanf("%d", &ptr->roll_no);
+    printf("Enter Name of Student\n");
+    scanf("%s", &ptr->name);
+    printf("Enter Branch of Student\n");
+    scanf("%s", &ptr->branch);
+    printf("Enter batch of Student\n");
+    scanf("%d", &ptr->batch);
  
-    struct Student s1;
-    struct Student* ptr = &s1;
+    // Displaying details of the student
+    printf("\nStudent details are: \n");
  
-    s1.roll_no = 27;
-    strcpy(s1.name, "Kamlesh Joshi");
-    strcpy(s1.branch, "Computer Science And Engineering");
-    s1.batch = 2019;
- 
-    // accessing structure pointer with dot operators
-    printf("Roll Number: %d\n", (*ptr).roll_no);
-    printf("Name: %s\n", (*ptr).name);
-    printf("Branch: %s\n", (*ptr).branch);
-    printf("Batch: %d", (*ptr).batch);
+    printf("Roll No: %d\n", ptr->roll_no);
+    printf("Name: %s\n", ptr->name);
+    printf("Branch: %s\n", ptr->branch);
+    printf("Batch: %d\n", ptr->batch);
  
     return 0;
 }
+
+
+

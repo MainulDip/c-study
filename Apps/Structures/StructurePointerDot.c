@@ -1,38 +1,31 @@
 // C Program to demonstrate Structure pointer
 #include <stdio.h>
 #include <string.h>
- 
-struct Student {
+ struct Student {
     int roll_no;
     char name[30];
     char branch[40];
     int batch;
 };
  
-// variable of structure with pointer defined
-struct Student s, *ptr;
+int main() { 
+    struct Student s1;
+    struct Student* ptr = &s1;
  
-int main()
-{
-    // pointing to the address by the pointer.
-    ptr = &s;
-    // Taking inputs and assign using arrow
-    printf("Enter the Roll Number of Student\n");
-    scanf("%d", &ptr->roll_no);
-    printf("Enter Name of Student\n");
-    scanf("%s", &ptr->name);
-    printf("Enter Branch of Student\n");
-    scanf("%s", &ptr->branch);
-    printf("Enter batch of Student\n");
-    scanf("%d", &ptr->batch);
+    s1.roll_no = 27;
+    strcpy(s1.name, "Kamlesh Joshi");
+    strcpy(s1.branch, "Computer Science And Engineering");
+    s1.batch = 2019;
  
-    // Displaying details of the student
-    printf("\nStudent details are: \n");
- 
-    printf("Roll No: %d\n", ptr->roll_no);
-    printf("Name: %s\n", ptr->name);
-    printf("Branch: %s\n", ptr->branch);
-    printf("Batch: %d\n", ptr->batch);
+    // accessing structure pointer with dot operators
+    printf("Roll Number: %d\n", (*ptr).roll_no);
+    printf("Name: %s\n", (*ptr).name);
+    printf("Branch: %s\n", (*ptr).branch);
+    printf("Batch: %d\n", (*ptr).batch);
+
+    printf("Batch: ptr->batch = %d\n", ptr->batch);
+    printf("Batch: s1.batch = %d\n", s1.batch);
+
  
     return 0;
 }
