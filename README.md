@@ -300,8 +300,6 @@ https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array
 
 ### Function's varag arguments and default parameter's values:
 
-### Return Statement :
-
 
 ### If Statements :
 ```c
@@ -513,22 +511,64 @@ void getArrayLen(Gym g) {
 ### Template:
 
 
-### While Loops :
+### While and do while, break and continue :
+```c
+int i = 0;
 
+while (i < 5 && anotherCondition) {
+  printf("%d\n", i);
+  i++;
+  // optional break and continue
+}
+
+//
+do {
+  // code block to be executed
+}
+while (condition);
+```
 
 ### Building a Guessing Game :
 
 
 ### For Loops :
+```c
+/**
+ * signature
+ * for (initializer, condition, incrementor/decremental) {}
+*/
 
+
+int i;
+
+for (i = 0; i < 5; i++) {
+  printf("%d\n", i);
+  // optional break and continue
+}
+```
 
 ### 2D Arrays & Nested Loops :
 
 
-### Memory Addresses :
+### Addresses (&var) :
+Address: Actual physical (RAM) address of the data/variable.
+```c
+int age = 30;
+printf("Address of age = %p", &age); // %p for address type
+```
 
+### Pointers || Initialization || Dereferencing:
+Pointer is a data type for address. It holds the address of other data-types/variables.
+```c
+int age = 30;
+int * pAge = &age; // storing/pointing the address of age variable
 
-### Pointers :
+printf("Pointer of age = %p", pAge); // 12345670 or some hexadecimal value
+
+// Dereferencing to get the address's holding value
+printf("Pointer of age = %p", *pAge); // 30
+printf("Pointer of age = %p", *&*&*&*&*&age); // 30, referencing and dereferencing many times for fun. (not meaningful)
+```
 
 ### Pointer Arithmetic:
 
@@ -557,8 +597,6 @@ https://stackoverflow.com/questions/1584100/converting-multidimensional-arrays-t
 ### Recursion: 
 Recursion is the technique of making a function call itself.
 ```c
-#include <stdio.h>
-
 int sum(int k);
 
 int main() {
@@ -578,6 +616,7 @@ int sum(int k) {
 
 ### Macros:
 ```c
+// Macro
 #define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))
 
 int main() {

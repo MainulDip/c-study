@@ -17,14 +17,17 @@ int main() {
     strcpy(s1.branch, "Computer Science And Engineering");
     s1.batch = 2019;
  
-    // accessing structure pointer with dot operators
+    // accessing/dereferencing structure pointer with dot operators
     printf("Roll Number: %d\n", (*ptr).roll_no);
     printf("Name: %s\n", (*ptr).name);
     printf("Branch: %s\n", (*ptr).branch);
     printf("Batch: %d\n", (*ptr).batch);
 
-    printf("Batch: ptr->batch = %d\n", ptr->batch);
-    printf("Batch: s1.batch = %d\n", s1.batch);
+    printf("Batch: ptr->batch = %d\n", ptr->batch); // 2019
+    printf("Batch: ptr->batch = %p\n", &ptr->batch); // 000000000061FE0C
+    printf("Batch: ptr->batch = %p\n", &(ptr->batch)); // 000000000061FE0C
+    printf("Batch: ptr->batch = %p\n", &s1.batch); // 000000000061FE0C
+    printf("Batch: s1.batch = %d\n", s1.batch); // 2019
 
  
     return 0;

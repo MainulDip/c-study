@@ -9,7 +9,7 @@ Unix and later Linux implements such interfaces themselves, Windows natively - d
 ### MinGw:
 It is a tool chain, consist of GCC, linker, objects + header + library, and debugger. MinGW rewrites programs so that they include inside themselves everything related to POSIX to OS mapping.
 
-### CygWin :
+### CygWin:
 It adds to windows a library (code and headers) that add the POSIX interface to windows (translating the POSIX calls into Windows calls) and port all the GNU programs (Linux based) by compiling them to use that library.
 
 ### MSYS (M-Sys or Minimal System):
