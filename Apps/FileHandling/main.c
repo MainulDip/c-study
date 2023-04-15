@@ -8,7 +8,7 @@ int main()
 
 
     /**
-    * Creating and writing to the file
+    * Creating and making it writable by "w" mode
     */
     fptr = fopen(filename, "w"); // "w" mode indicates to create a file if does not exists
 
@@ -26,7 +26,7 @@ int main()
     fclose(fptr);
 
     /**
-    * Reading from the file
+    * Reading contents from the file
     */
     char fileContent1[100], fileContent2[100], fileContent3[100], fileContent4[100];
     fptr = fopen(filename, "r");

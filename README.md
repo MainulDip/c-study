@@ -221,6 +221,7 @@ printf("x[0][0] = %d and y[1][0] = %d\n", x[1][2], y[1][3]); // 6 and 7
 ```
 
 ### Multidimensional array as function parameter:
+https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array-to-a-function-in-c-and-c
 ```c
 #include <stdio.h>
 void displayNumbers(int num[2][2]);
@@ -294,9 +295,6 @@ int main()
   return 0;
 }
 ```
-### Multidimensional array as function parameter:
-
-https://stackoverflow.com/questions/2828648/how-to-pass-a-multidimensional-array-to-a-function-in-c-and-c
 
 ### Function's varag arguments and default parameter's values:
 
@@ -508,7 +506,11 @@ void getArrayLen(Gym g) {
 }
 ```
 
-### Template:
+### Template || Generics:
+In C++ Generics are officially called Template. These are converted into objects in compile-time. C (being non object-oriented language) doesn't has Template creation feature, but can be achieved (to some extent) by #define directive and typedef keyword. Example: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
+
+### Directives (#):
+Directives are processed just before the compilation. These are start with # in C/C++. See more: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
 
 
 ### While and do while, break and continue :
@@ -527,10 +529,6 @@ do {
 }
 while (condition);
 ```
-
-### Building a Guessing Game :
-
-
 ### For Loops :
 ```c
 /**
@@ -546,10 +544,6 @@ for (i = 0; i < 5; i++) {
   // optional break and continue
 }
 ```
-
-### 2D Arrays & Nested Loops :
-
-
 ### Addresses (&var) :
 Address: Actual physical (RAM) address of the data/variable.
 ```c
@@ -586,6 +580,13 @@ https://stackoverflow.com/questions/1584100/converting-multidimensional-arrays-t
 
 
 ### Dereferencing Pointers :
+```c
+int x = 1234;
+int * xptr = &x;
+
+printf("%p\n", xptr); // printing pointer 
+printf("%d\n", *xptr); // printing dereferenced pointer using *xptr
+```
 
 
 ### Recursion: 
@@ -666,3 +667,5 @@ printf("%s", fileContent1); // First Line
 printf("%s", fileContent2); // Second Line
 fclose(fptr);
 ```
+
+### Enum:
