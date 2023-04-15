@@ -506,13 +506,6 @@ void getArrayLen(Gym g) {
 }
 ```
 
-### Template || Generics:
-In C++ Generics are officially called Template. These are converted into objects in compile-time. C (being non object-oriented language) doesn't has Template creation feature, but can be achieved (to some extent) by #define directive and typedef keyword. Example: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
-
-### Directives (#):
-Directives are processed just before the compilation. These are start with # in C/C++. See more: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
-
-
 ### While and do while, break and continue :
 ```c
 int i = 0;
@@ -608,7 +601,6 @@ int sum(int k) {
   }
 }
 ```
-
 ### Macros:
 ```c
 // Macro
@@ -667,5 +659,51 @@ printf("%s", fileContent1); // First Line
 printf("%s", fileContent2); // Second Line
 fclose(fptr);
 ```
-
 ### Enum:
+
+### Template || Generics:
+In C++ Generics are officially called Template. These are converted into objects in compile-time. C (being non object-oriented language) doesn't has Template creation feature, but can be achieved (to some extent) by #define directive and typedef keyword. Example: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
+
+### Directives (#):
+Directives are processed just before the compilation. These are start with # in C/C++. See more: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
+
+* Include Directive: this tells the compiler to include a file in the source code program.
+ - Standard file: #include <file_name>, ‘<‘ and ‘>’ brackets tell the compiler to look for the file in the standard directory. 
+ - User-defined files: #include "file_name"
+
+* other directives 
+```c
+#include <stdio.h> // include directive to add Standard Fies
+#include <stdlib.h>
+
+// Defining Macros
+#define NUMBER 0 // no semicolon for directives
+#define AREA(x,y) (x*y) // macro with parameters
+
+int main()
+{
+    printf("NUMBER = %d\n", NUMBER);
+    printf("AREA = %d\n", AREA(10, 10));
+
+
+    /**
+    * if the Macro name after the #ifdef is defined before, it will run the block
+    * if not defined or later make #undef to undefined, the block will not run
+    * even if the Macro value is 0, the block will execute
+    */
+    #ifdef NUMBER
+    printf("Printing NUMBER = %d again using the #ifdef\n", NUMBER);
+    #endif // NUMBER
+
+    /**
+    * #undef to make a existing macro undefined
+    * is used the same way, now it will not ptint
+    */
+    #undef NUMBER // will undefine the existing macro
+    #ifdef NUMBER
+    printf("The NUMBER Macro is undefined, so this will not print");
+    #endif // NUMBER
+
+    return 0;
+}
+```

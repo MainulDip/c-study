@@ -1,7 +1,7 @@
 ### Overview:
 Some little more after the basic.
 
-### Header File :
+### Header File:
 A header file is a file with extension .h which contains C function declarations and macro definitions to be shared between several source files. Including a header file is equal to copying the content of the header file. But it's a good practice (avoid errors/bugs) to keep all the constants, macros, system wide global variables, and function prototypes in the header files and include that header file wherever it is required.
 
 There are 2 types of header :
