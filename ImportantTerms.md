@@ -23,7 +23,7 @@ It's a a component of MinGW. MSYS is an application that gives the user a comman
 ### Unix vs Linux (Unix like):
 Unix is closed source (proprietary, made by AT&T, came before Linux), where Linux is open source.
 
-### Macro:
+### Macros:
 
 ### Headers:
 

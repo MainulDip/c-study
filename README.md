@@ -10,8 +10,28 @@ It's a personalized repo for the C programming language, which will act like min
     // note that clang 3.7 declares itself as a gcc 4.2"
     printf ("gcc detected version %d.%d\n", __GNUC__, __GNUC_MINOR__);
 #endif
-``
+```
+### Compiling using shell:
+ * Passing Compilation Arguments, using shell
+ * first compile this file into this directory by -> gcc CompilerArgs.c -o outputFileName -std=c99
+ * then run -> outputFileName.exe Hello World
+ * it will print the output of the file
+ * if no output filename is supplied, a.exe (windows) will be the output file name
+```c
+int main(int argc, char const *argv[])
+{
+    for (int i = 0; i < argc; i++) {
+        printf("arg %d : %s\n", i, argv[i]);
+    }
+    return 0;
+}
 
+/** Output:
+ * arg 0 : <filename.exe>
+ * arg 1 : Hello
+ * arg 2 : World
+*/
+```
 ### Variables :
 ```c
 // type variableName = variableValue
@@ -660,6 +680,8 @@ printf("%s", fileContent2); // Second Line
 fclose(fptr);
 ```
 ### Enum:
+
+### malloc:
 
 ### Template || Generics:
 In C++ Generics are officially called Template. These are converted into objects in compile-time. C (being non object-oriented language) doesn't has Template creation feature, but can be achieved (to some extent) by #define directive and typedef keyword. Example: https://levelup.gitconnected.com/using-templates-and-generics-in-c-968da223154d
