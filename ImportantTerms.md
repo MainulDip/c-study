@@ -4,7 +4,7 @@ POSIX is a programming C interface for operating systems (among other things, li
 * POSIX presents the OS to a hosted program as a set of callable C functions
 
 Unix and later Linux implements such interfaces themselves, Windows natively - doesn't. It has its own way to manage operating system entities (Win32). Mac OS also doesn't.
-> GCC is a compiler suite common on systems that offer a POSIX interfaces. MinGW or CgyWin provide the compatibility layer with the os providing/implementing/linking the POSIX interfaces. Through these GCC works together with the underlying os.
+> GCC is a compiler suite common on systems that offer a POSIX interfaces. MinGW or CgyWin provide the compatibility layer with the os providing/implementing/linking the POSIX interfaces. Through these GCC works together with the underlying oss
 
 ### MinGw:
 It is a tool chain, consist of GCC, linker, objects + header + library, and debugger. MinGW rewrites programs so that they include inside themselves everything related to POSIX to OS mapping.
