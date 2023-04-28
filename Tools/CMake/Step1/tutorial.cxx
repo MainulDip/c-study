@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 // TODO 11: Include TutorialConfig.h
 
 int main(int argc, char* argv[])
@@ -25,6 +27,11 @@ int main(int argc, char* argv[])
             << std::endl;
 
 // std::cout << "Hello World";
+
+// this will pause the console from going away, 
+cin.get();
+// it is windows specific, >0 will remove the extra text
+// system("pause>0"); 
   return 0;
 }
 

@@ -9,7 +9,7 @@ CMake is not a package manager, it's a cross platform build generator, closest w
 
 NB: Conan is a package manager for C/C++ and utilize CMake under the hood.
 
-### CMakeLists.txt:
+### CMakeLists.txt :
 Is the entry point for CMake. The name should be a exact match.
 ### Building Project:
 * create a build directory, cd into it then run ( as if CMakeLists.txt is on parent directory )

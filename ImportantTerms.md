@@ -1,7 +1,7 @@
 ### POSIX:
 POSIX is a programming C interface for operating systems (among other things, like Shell and utilities). It stands for "Portable Operating System Interface" It's a family of standards specified by IEEE for maintaining compatibility among operating systems.
 
-* POSIX presents the OS to a hosted program as a set of callable C functions
+* POSIX presents the OS to a hosted program as a set of callable C functions.
 
 Unix and later Linux implements such interfaces themselves, Windows natively - doesn't. It has its own way to manage operating system entities (Win32). Mac OS also doesn't.
 > GCC is a compiler suite common on systems that offer a POSIX interfaces. MinGW or CgyWin provide the compatibility layer with the os providing/implementing/linking the POSIX interfaces. Through these GCC works together with the underlying oss
