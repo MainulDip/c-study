@@ -44,7 +44,7 @@ char someCharacters[] = "NameCharacters";
 printf("Printing Variable someCharacters as %%s %s ", someCharacters);
 // Output: Printing Variable someCharacters as %s NameCharacters
 
-// %d for digit/int
+// %d for digit
 int characterAge = 37;
 printf("\nNow printing digit by %%d and the characterAge = %d\n", characterAge);
 // output: Now printing digit by %d and the characterAge = 37
