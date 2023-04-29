@@ -31,5 +31,21 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 ```
 
-### Data passing (Version Number):
+### File copy/configuration and Data passing:
+configure_file(<inputfile.h.in> <outputfile.h>) : Copies an <input> file to an <output> file and substitutes variable values referenced as @VAR@ or ${VAR} in the input file content. The output file will be placed in CMAKE_CURRENT_BINARY_DIR or Build directory. So we also need to add that directory to the list of paths to search for include files by target_include_directories ( ProjectName PUBLIC "${PROJECT_BINARY_DIR}" )
+
+```txt
+// inputfile.h.in
+#define ProjectName_VERSION_MAJOR @ProjectName_VERSION_MAJOR@
+#define ProjectName_VERSION_MINOR @ProjectName_VERSION_MINOR@
+// getting from CMakeLists.txt
+
+// CMakeLists.txt
+project(ProjectName VERSION 1.0) 
+// here cmake will auto Generate variables for Major and Minor Version by ProjectName_VERSION_MAJOR and ProjectName_VERSION_MINOR
+
+// add the build directory where the pre-processor will search for copied files (header files)
+target_include_directories ( ProjectName PUBLIC "${PROJECT_BINARY_DIR}" )
+// see practical use inside tools/step1/CMakeLists.txt
+```
 
