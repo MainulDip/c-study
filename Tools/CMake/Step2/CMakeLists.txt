@@ -24,9 +24,9 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 # Only call add_subdirectory and only add MathFunctions specific values
 # to EXTRA_LIBS and EXTRA_INCLUDES if USE_MYMATH is ON.
 if(USE_MYMATH)
-  add_subdirectory(MathFunctions)
-  list(APPEND EXTRA_LIBS MathFunctions)
-  list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
+  add_subdirectory(MathFunctions) # this will build the library based on directory
+  list(APPEND EXTRA_LIBS MathFunctions) # just storing the value as "MathFunctions"
+  list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions") # just storing value like above
 endif()
 # like set() command, the list() command creates new variable values in the current scope
 # list( subcommand variable_name variable_value )
@@ -46,7 +46,7 @@ add_executable(Tutorial tutorial.cxx)
 # target_link_libraries(Tutorial PUBLIC MathFunctions)
 # commented to make optional Library Include
 # if EXTRA_LIBS are set in list, it will return value, otherwise empty
-target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
+target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS}) # this actually link the library
 
 # TODO 3: Use target_link_libraries to link the library to our executable
 

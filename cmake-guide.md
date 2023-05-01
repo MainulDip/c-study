@@ -101,9 +101,9 @@ option(USE_MYMATH "Use tutorial provided math implementation" ON)
 # to EXTRA_LIBS and EXTRA_INCLUDES if USE_MYMATH is ON.
 
 if(USE_MYMATH)
-  add_subdirectory(MathFunctions)
-  list(APPEND EXTRA_LIBS MathFunctions)
-  list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
+  add_subdirectory(MathFunctions) # this will build the library based on directory
+  list(APPEND EXTRA_LIBS MathFunctions) # just storing the value as "MathFunctions"
+  list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions") # just storing value like above
 endif()
 
 # like set() command, the list() command creates new variable values in the current scope
