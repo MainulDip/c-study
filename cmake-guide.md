@@ -74,3 +74,51 @@ Custom Library can be made optional using CMakes option() call. This gives users
 * Main.cxx source header.h.in (CMake will process it and make it header.h inside build directory) :
    #cmakedefine USE_MYMATH
    // this will be replaced by preprocessor with either "#define VAR" or "#undef VAR" based on Cmake configuration, https://cmake.org/cmake/help/latest/command/configure_file.html#command:configure_file
+* Top Level Src (Main.cxx) :
+```cxx
+// optional includes, check if USE_MYMATH is defined (CMake build argument)
+#ifdef USE_MYMATH
+#  include "MathFunctions.h"
+#endif
+
+// and use inside main func
+// optional library function call
+#ifdef USE_MYMATH
+   const double outputValue = mysqrt(inputValue);
+#else
+   const double outputValue = sqrt(inputValue);
+#endif
+```
+* Top Level CMakeLists.txt :
+```txt
+# option(<variable> "<help_text>" [value]) Provide a boolean option that the user can optionally select/send as build argument
+# value can be "ON" or "OFF", If no initial <value> is provided, boolean OFF is the default value.
+
+option(USE_MYMATH "Use tutorial provided math implementation" ON)
+
+
+# Only call add_subdirectory and only add MathFunctions specific values
+# to EXTRA_LIBS and EXTRA_INCLUDES if USE_MYMATH is ON.
+
+if(USE_MYMATH)
+  add_subdirectory(MathFunctions)
+  list(APPEND EXTRA_LIBS MathFunctions)
+  list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
+endif()
+
+# like set() command, the list() command creates new variable values in the current scope
+# list( subcommand variable_name variable_value )
+# A list in cmake is a ; separated group of strings.
+# subcommands can be APPEND, INSERT, FILTER, PREPEND, POP_BACK, POP_FRONT, REMOVE_AT, REMOVE_ITEM, REMOVE_DUPLICATES, REVERSE and SOR
+# https://cmake.org/cmake/help/latest/command/list.html#command:list
+
+
+# if EXTRA_LIBS are set in list, it will return value, otherwise empty
+target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
+
+# add the binary tree to the search path for include files, so header files are available to include inside src's Main.cxx
+target_include_directories(Tutorial PUBLIC
+                           "${PROJECT_BINARY_DIR}"
+                           ${EXTRA_INCLUDES}
+                           )
+```

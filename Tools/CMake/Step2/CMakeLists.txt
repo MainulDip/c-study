@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # TODO 7: Create a variable USE_MYMATH using option and set default to ON
+# option(<variable> "<help_text>" [value]) Provide a boolean option that the user can optionally select/send as build argument
+# value can be "ON" or "OFF", If no initial <value> is provided, boolean OFF is the default value.
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 
 # configure a header file to pass some of the CMake settings
@@ -20,7 +22,7 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 # the appropriate lists.
 #
 # Only call add_subdirectory and only add MathFunctions specific values
-# to EXTRA_LIBS and EXTRA_INCLUDES if USE_MYMATH is true.
+# to EXTRA_LIBS and EXTRA_INCLUDES if USE_MYMATH is ON.
 if(USE_MYMATH)
   add_subdirectory(MathFunctions)
   list(APPEND EXTRA_LIBS MathFunctions)

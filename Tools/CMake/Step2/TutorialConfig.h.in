@@ -4,4 +4,4 @@
 
 // TODO 13: use cmakedefine to define USE_MYMATH
 #cmakedefine USE_MYMATH
-// this will be replaced by preprocessor with either "#define VAR" or "#undef VAR" based on Cmake configuration, https://cmake.org/cmake/help/latest/command/configure_file.html#command:configure_file
+// this will be replaced by preprocessor with either "#define VAR" or "#undef VAR" based on Cmake configuration and build args, https://cmake.org/cmake/help/latest/command/configure_file.html#command:configure_file

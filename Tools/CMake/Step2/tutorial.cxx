@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
   // TODO 6: Replace sqrt with mysqrt
   // const double outputValue = mysqrt(inputValue);
 
-  // optional library function call
+  // optional library's function call
   #ifdef USE_MYMATH
     const double outputValue = mysqrt(inputValue);
   #else
