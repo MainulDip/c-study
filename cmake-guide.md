@@ -49,3 +49,19 @@ target_include_directories ( ProjectName PUBLIC "${PROJECT_BINARY_DIR}" )
 // see practical use inside tools/step1/CMakeLists.txt
 ```
 
+### Adding Library Using CMake:
+* The Library Should be on it's own directory with a CMakeLists.txt, which will be called from the top level CMakeLists.txt.
+
+* Library Level CMakeLists.txt :
+   - define the library and source file using : add_library(LibraryName sourcefile.cxx)
+* Top Level CMakeLists.txt :
+   - Specify Library Src File and It's CMakeLists.txt directory by : add_subdirectory(LIbraryDirectory)
+   - Link the Library with the Executable by : target_link_libraries(ProjectName PUBLIC LibraryName)
+   - Include the Library's Header File Into Searchable Directory by : 
+      target_include_directories(ProjectName PUBLIC
+                          "${PROJECT_BINARY_DIR}"
+                          "${PROJECT_SOURCE_DIR}/LibraryDirectory"
+                          )
+* Main.cxx :
+   - Call the library functions by including the Library Header File only as : #include "LibraryHeader.h"
+   - Then call the functions (defined inside Library's Header as Signature) from top level cpp code
