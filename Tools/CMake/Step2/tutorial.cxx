@@ -8,7 +8,12 @@
 // TODO 11: Only include MathFunctions if USE_MYMATH is defined
 
 // TODO 5: Include MathFunctions.h
-#include "MathFunctions.h"
+// #include "MathFunctions.h"
+
+// optional includes
+#ifdef USE_MYMATH
+#  include "MathFunctions.h"
+#endif
 
 int main(int argc, char* argv[])
 {
@@ -26,7 +31,14 @@ int main(int argc, char* argv[])
   // TODO 12: Use mysqrt if USE_MYMATH is defined and sqrt otherwise
 
   // TODO 6: Replace sqrt with mysqrt
-  const double outputValue = mysqrt(inputValue);
+  // const double outputValue = mysqrt(inputValue);
+
+  // optional library function call
+  #ifdef USE_MYMATH
+    const double outputValue = mysqrt(inputValue);
+  #else
+    const double outputValue = sqrt(inputValue);
+  #endif
 
   // calculate square root
   // const double outputValue = sqrt(inputValue);

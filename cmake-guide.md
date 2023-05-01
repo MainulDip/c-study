@@ -65,3 +65,12 @@ target_include_directories ( ProjectName PUBLIC "${PROJECT_BINARY_DIR}" )
 * Main.cxx :
    - Call the library functions by including the Library Header File only as : #include "LibraryHeader.h"
    - Then call the functions (defined inside Library's Header as Signature) from top level cpp code
+
+### Optional Library Call:
+Custom Library can be made optional using CMakes option() call. This gives users a variable which they can change when configuring/running their cmake build. This setting will be stored in the cache so that the user does not need to set the value each time they run CMake on a build directory.
+
+   - This option will be displayed in the cmake-gui and ccmake with a default value and that can be changed by the user while running the build
+
+* Main.cxx source header.h.in (CMake will process it and make it header.h inside build directory) :
+   #cmakedefine USE_MYMATH
+   // this will be replaced by preprocessor with either "#define VAR" or "#undef VAR" based on Cmake configuration, https://cmake.org/cmake/help/latest/command/configure_file.html#command:configure_file
