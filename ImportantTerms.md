@@ -33,3 +33,5 @@ Unix is closed source (proprietary, made by AT&T, came before Linux), where Linu
 
 ### Preprocessor || Compilation || Object Code || Linker || Executable || Runtime:
 * https://www.geeksforgeeks.org/cc-preprocessors/
+
+### Generators:
