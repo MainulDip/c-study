@@ -12,8 +12,22 @@ archive is defined as a STATIC library -- an archive containing objects compiled
 ### Library Types:
 * Static : 
    By default, the add_library() command defines a STATIC library, unless a type is specified. It is linkable and extendable with other libraries and doesn't require export of any symbol (like shared).
+```txt
+add_library(archive archive.cpp zip.cpp lzma.cpp)
+add_executable(zipapp zipapp.cpp)
+target_link_libraries(zipapp archive)
+```
+
 * Shared :
    Similar to Static Library, but CMake expects SHARED libraries to export at least one symbol (e.g. Windows resource DLL, C++/CLI DLL).
+```txt
+add_library(MyFramework SHARED MyFramework.cpp)
+set_target_properties(MyFramework PROPERTIES
+  FRAMEWORK TRUE
+  FRAMEWORK_VERSION A # Version "A" is macOS convention
+  MACOSX_FRAMEWORK_IDENTIFIER org.cmake.MyFramework
+)
+```
 * Module : 
    A module library, i.e. plugin, adds additional support at runtime but isn't required compile time. But shared libraries are specified by the developer at compile-time and must be present for the application to run, even though their methods are loaded at runtime. So Module Libraries are not linkable by linkers. Shared library can be linked.
 

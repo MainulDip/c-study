@@ -35,3 +35,15 @@ Unix is closed source (proprietary, made by AT&T, came before Linux), where Linu
 * https://www.geeksforgeeks.org/cc-preprocessors/
 
 ### Generators:
+A generator provides a way to create elements "on the fly" without holding them all in memory before we start going over them. Like looping/iterating over a range creates the range elements on the fly one by one on each iteration.
+```py
+# here range is the generator function, each value is created in range one by one, so it takes less memory
+
+for i in range(10):
+    print(i)
+
+# Non generator iteration is done on already created values (ie: array)
+# all the values of an array are stored in memory, so it takes more memory.
+for i in [0,1,2,3,4,5,6,7,8,9]:
+    print(i)
+```

@@ -122,3 +122,10 @@ target_include_directories(Tutorial PUBLIC
                            ${EXTRA_INCLUDES}
                            )
 ```
+
+### Usages Requirements () :
+By Using INTERFACE Usages Requirement inside Library's CMakeLists.txt, the main Source's CMake file does not require to include it again. Linking the Library will aromatically do the job by target_link_libraries.
+
+### Generator expressions :
+These are evaluated during build system generation to produce information specific to each build configuration.
+* Setting C++ Standard By Using Interface Library.
