@@ -170,7 +170,7 @@ sn[21] = 1234;
 printf("Non Existence Element is %d\n", sn[21]); // -2
 ```
 
-### Functions :
+### Functions:
 ```c
 // if the function's return type is anything other than void, put signature (prototyping) before the main function
 double cube(double num);

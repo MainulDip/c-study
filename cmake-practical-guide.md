@@ -128,4 +128,18 @@ By Using INTERFACE Usages Requirement inside Library's CMakeLists.txt, the main 
 
 ### Generator expressions :
 These are evaluated during build system generation to produce information specific to each build configuration.
+
+Generator expressions may be used to enable conditional linking, conditional definitions used when compiling, conditional include directories and more. The conditions may be based on the build configuration, target properties, platform information or any other queryable information.
+
 * Setting C++ Standard By Using Interface Library.
+```txt
+# adding interface library called tutorial_compiler_flags to set C++ standard
+# use add_library() with the INTERFACE signature
+# Add compiler feature cxx_std_11 to tutorial_compiler_flags using target_compile_features()
+add_library(tutorial_compiler_flags INTERFACE)
+target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_11)
+
+# Link to tutorial_compiler_flags with both src and library
+target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS} tutorial_compiler_flags)
+target_link_libraries(MathFunctions tutorial_compiler_flags)
+```
