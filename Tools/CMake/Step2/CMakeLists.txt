@@ -44,7 +44,7 @@ add_executable(Tutorial tutorial.cxx)
 # TODO 9: Use EXTRA_LIBS instead of the MathFunctions specific values
 # in target_link_libraries.
 # target_link_libraries(Tutorial PUBLIC MathFunctions)
-# commented to make optional Library Include
+# commented to include library optionally
 # if EXTRA_LIBS are set in list, it will return value, otherwise empty
 target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS}) # this actually link the library
 
