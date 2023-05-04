@@ -126,8 +126,24 @@ target_include_directories(Tutorial PUBLIC
 ### Usages Requirements () :
 By Using INTERFACE Usages Requirement inside Library's CMakeLists.txt, the main Source's CMake file does not require to include it again. Linking the Library will aromatically do the job by target_link_libraries.
 
-### Generator expressions :
+### Generator expressions || $<...> :
 These are evaluated during build system generation to produce information specific to each build configuration.
+
+```txt
+# Generator Expression, should not contain spaces, new lines, semicolons and other characters
+
+target_include_directories(tgt PRIVATE /opt/include/$<CXX_COMPILER_ID>)
+
+# would expand to /opt/include/GNU, /opt/include/Clang, etc. depending on the C++ compiler used
+
+# Nested Generator Expression
+target_compile_definitions(tgt PRIVATE
+  $<$<VERSION_LESS:$<CXX_COMPILER_VERSION>,4.2.0>:OLD_COMPILER>
+)
+# would expand to OLD_COMPILER if the CMAKE_CXX_COMPILER_VERSION is less than 4.2.0
+```
+
+Docs : https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)
 
 Generator expressions may be used to enable conditional linking, conditional definitions used when compiling, conditional include directories and more. The conditions may be based on the build configuration, target properties, platform information or any other queryable information.
 
@@ -144,3 +160,17 @@ target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS} tutorial_compiler_flags)
 target_link_libraries(MathFunctions tutorial_compiler_flags)
 ```
 ### Compiler Warning Flag With Generator Expression:
+Adding compiler warning flags when building but not for installed versions.
+```txt
+cmake_minimum_required(VERSION 3.15)
+
+# set the result in the variables gcc_like_cxx and msvc_cxx as follows:
+set(gcc_like_cxx "$<COMPILE_LANG_AND_ID:CXX,ARMClang,AppleClang,Clang,GNU,LCC>")
+set(msvc_cxx "$<COMPILE_LANG_AND_ID:CXX,MSVC>")
+
+# Using our variables gcc_like_cxx and msvc_cxx, we can use another generator expression to apply the respective flags only when the variables are true. Also show these flags only on build
+target_compile_options(tutorial_compiler_flags INTERFACE
+  "$<${gcc_like_cxx}:$<BUILD_INTERFACE:-Wall;-Wextra;-Wshadow;-Wformat=2;-Wunused>>"
+  "$<${msvc_cxx}:$<BUILD_INTERFACE:-W3>>"
+)
+```

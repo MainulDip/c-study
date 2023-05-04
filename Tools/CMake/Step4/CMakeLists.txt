@@ -61,7 +61,7 @@ endif()
 # add the executable
 add_executable(Tutorial tutorial.cxx)
 
-# TODO 2: Link to tutorial_compiler_flags with both src and library
+# TODO 2: Link to tutorial_compiler_flags with both src file and library
 
 target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS} tutorial_compiler_flags)
 target_link_libraries(MathFunctions tutorial_compiler_flags)

@@ -8,7 +8,7 @@ add_library(archive archive.cpp zip.cpp lzma.cpp)
 add_executable(zipapp zipapp.cpp)
 target_link_libraries(zipapp archive)
 ```
-archive is defined as a STATIC library -- an archive containing objects compiled from archive.cpp, zip.cpp, and lzma.cpp. zipapp is defined as an executable formed by compiling and linking zipapp.cpp. When linking the zipapp executable, the archive static library is linked in.
+archive is defined as a STATIC library -- an archive containing objects compiled from archive.cpp, zip.cpp, and lzma.cpp. zipapp is defined as an executable formed by compiling and linking zipapp.cpp. When linking the zipapp executable, the archive static library is linked.
 ### Library Types:
 * Static : 
    By default, the add_library() command defines a STATIC library, unless a type is specified. It is linkable and extendable with other libraries and doesn't require export of any symbol (like shared).
