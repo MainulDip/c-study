@@ -7,7 +7,7 @@ Unix and later Linux implements such interfaces themselves, Windows natively - d
 > GCC is a compiler suite common on systems that offer a POSIX interfaces. MinGW or CgyWin provide the compatibility layer with the os providing/implementing/linking the POSIX interfaces. Through these GCC works together with the underlying oss.
 
 ### MinGw:
-It is a tool chain, consist of GCC, linker, objects + header + library, and debugger. MinGW rewrites programs so that they include inside themselves everything related to POSIX to OS mapping.
+It is a tool chain, consist of GCC, linker, objects + header + library, and debugger. MinGW rewrites programs so that they include inside themselves everything related to POSIX to OS mapping
 
 ### CygWin:
 It adds to windows a library (code and headers) that add the POSIX interface to windows (translating the POSIX calls into Windows calls) and port all the GNU programs (Linux based) by compiling them to use that library.

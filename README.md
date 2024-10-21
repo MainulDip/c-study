@@ -1,6 +1,15 @@
 ### Overview:
 It's a personalized repo for the C programming language, which will act like mini guide to jump start and personal references/notes
-### Get C Compiler Version :
+
+### C coding rules:
+- semicolon `;` is mandatory
+- The compiler ignores white spaces
+-
+### Get C Compiler Version | Clang or GNUC (GCC or GNU Compiler Collection) :
+C has multiple compiler.
+- GCC: for unix/linux and mingw/windows
+- Clang: LLVM native" C/C++/Objective-C/CUDA/OpenCL compiler, 
+- msvc: for windows
 ```c
 #ifdef __clang_major__
     printf ("clang detected version %d.%d\n", __clang_major__, __clang_minor__);

@@ -7,7 +7,7 @@ CMake is not a package manager, it's a cross platform build generator, closest w
  - cmake generates platform specific makefile, 
 
 
-NB: Conan is a package manager for C/C++ and utilize CMake under the hood.
+NB: Conan is a package manager for C/C++ and utilize CMake under the hood
 
 ### CMakeLists.txt and Basic Config:
 Is the entry point for CMake. The name should be a exact match.
